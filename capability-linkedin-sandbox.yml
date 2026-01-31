@@ -1,0 +1,819 @@
+naftiko:
+  schema: >-
+    https://github.com/naftiko/schema/blob/main/core/capability/capabiity-schema.yml
+info:
+  name: LinkedIn API & MCP Sandbox
+  description: >-
+    This is a LinkedIn sandbox that uses OpenAPI, Microcks, Bruno, and Backstage
+    to provide a 3rd-party REST API and MCP sandbox for LinkedIn.
+  tags:
+    - Social
+    - Jobs
+    - Recruiting
+ports:
+  source:
+    - aid: linkedin-sandbox
+      title: Linkedin Compliance Events API
+      description: >-
+        LinkedIn provides Compliance API Guides for monitoring, archiving, and
+        management of communications for enterprises in regulated industries.
+        The Compliance Events API allows applications to archive all LinkedIn
+        activities from the past 30 days of a regulated, authenticated member.
+      openApi:
+        - $ref: openapi/linkedin-compliance-events.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Learning Activity Reports API
+      description: >-
+        The LinkedIn Learning APIs enable access to Learning Content and
+        Learning Activity Reports. This API provides learning activity reports
+        including course completions, seconds of content viewed, and learner
+        logins. Activity data can be aggregated by account, group, individual,
+        or content.Access to LinkedIn Learning APIs is available to members of
+        the Partner Program and organizations that have purchased LinkedIn
+        Learning site licenses.
+      openApi:
+        - $ref: openapi/linkedin-learning-activity-reports.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Marketing Audience Insights API
+      description: >-
+        Audience Insights API enables you to discover and identify audience
+        segments that meet your target persona, demonstrate interest and
+        engagement in relevant products/offerings, uncover insights about
+        companies the target audience works for, and activate audience for
+        targeting in sponsored ad campaigns on LinkedIn.Note: This is a private
+        API available to qualified developers who meet additional criteria for
+        access.
+      openApi:
+        - $ref: openapi/linkedin-marketing-audience-insights.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Marketing Audiences API
+      description: >-
+        LinkedIn Audiences API enables combining LinkedIn's data with your own
+        data to reach the right audiences on LinkedIn. This includes streaming
+        companies for account targeting, streaming users for contact targeting,
+        and CSV list uploads for both account and contact targeting.
+      openApi:
+        - $ref: openapi/linkedin-marketing-audience.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Marketing Campaign Management API
+      description: >-
+        Campaign Manager is LinkedIn's online tool for creating and managing ad
+        accounts and campaigns. This API provides capabilities for account
+        management, campaign group management, campaign management, creative
+        management, ad targeting, and forecasting.You must apply for access to
+        the Marketing Developer Platform to use these APIs.
+      openApi:
+        - $ref: openapi/linkedin-marketing-campaigns.yml
+    - aid: linkedin-sandbox
+      title: Community Management
+      description: >-
+        **You must apply for access to the Marketing Developer Platform in order
+        to use these APIs. See the** [**Developer
+        Portal**](https://developer.linkedin.com/product-catalog/marketing/page-management)
+        **on how to apply.**This collection aims to focus on different Community
+        Management use cases, for example, social action notifications, and
+        should be used with the **community-management-env-versioning**
+        environment.\--All requests for the Community Management API collection
+        are in the Restli 2.0 format--AuthorizationOAuth 2.0
+      openApi:
+        - $ref: openapi/linkedin-marketing-community.yml
+    - aid: linkedin-sandbox
+      title: Content APIs
+      description: >-
+        Please note that these are versioned set of APIs and they are different
+        than the earlier one.These must be used with the
+        **content-api-env-versioning** environment.Content APIs are the APIs
+        that are published with the versioned release. These APIs bring
+        capabilities to partners/developers to create rich content via LinkedIn
+        Ads with minimal operational and technical overhead.**You must apply for
+        access to the Marketing Developer Platform in order to use these APIs.
+        See the** [**Developer
+        Portal**](https://developer.linkedin.com/product-catalog/marketing/campaign-management)
+        **on how to apply.**
+      openApi:
+        - $ref: openapi/linkedin-marketing-content.yml
+    - aid: linkedin-sandbox
+      title: Conversions API
+      description: >-
+        **See the** [Getting
+        Access](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/conversions/getting-access-conversions)
+        guide **on how to apply.**[LinkedIn's Conversion
+        API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api)
+        is a conversion tracking tool that creates a direct connection between
+        marketing data from an advertiser’s server and LinkedIn. This API
+        enables advertisers to measure the performance of their LinkedIn
+        marketing campaigns no matter where the conversion happens and use this
+        data to power campaign optimization.This collection aims to focus on the
+        new Conversions API and should be used with the
+        **conversions-env-versioning** environment.There are two conditions for
+        successful calls: (1) Scope permissions to `rw_conversions`, `r_ads` and
+        (2) the user assigning permission holding one of the following roles in
+        the Ad Account.Scope permissions for [3-legged
+        Oauth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)-
+        `rw_conversions` (Read/Write)- `r_ads` (Read)    Ad Account Roles:-
+        `ACCOUNT_BILLING_ADMIN`- `ACCOUNT_MANAGER`- `CAMPAIGN_MANAGER`-
+        `CREATIVE_MANAGER`    \--All requests for the Conversions collection are
+        in the Restli 2.0 format--
+      openApi:
+        - $ref: openapi/linkedin-marketing-conversions.yml
+    - aid: linkedin-sandbox
+      title: Lead Sync
+      description: >-
+        This collection aims to focus on different lead syncing use cases and
+        should be used with the **lead-sync-env-versioning** environment._All
+        requests for the Lead Sync collection are in the Restli 2.0 format and
+        uses OAuth 2.0_
+      openApi:
+        - $ref: openapi/linkedin-marketing-leads.yml
+    - aid: linkedin-sandbox
+      title: Media Planning
+      description: >-
+        ## OverviewMedia Planning API can help Media Planners understand the
+        reach and ROI that LinkedIn can offer to their client. It allows them to
+        make budget allocation recommendations with confidence and know how to
+        improve the results, even before spending the first dollar. Media
+        Planning API helps Media Planners make that decision by giving the
+        forecasted reach, impressions (and more in future, like clicks, leads)
+        curve over the budget, based on inputs provided like targeted audience,
+        campaign start/end date and more.Note: This is a private API that is
+        available to qualified developers who meet additional criteria for
+        access. To learn more about eligibility qualifications and how to
+        request access, please see the
+        [FAQ](https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq#how-do-i-get-access-to-media-planning-api-product).
+        If you wish to apply for access, please submit a [Zendesk support
+        ticket](https://linkedin.zendesk.com/).## PermissionsMedia Planning API
+        requires a [3-legged
+        OAuth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)
+        member token and your developer application needs to be provisioned with
+        the Media Planning API product. Once you have been approved to access,
+        you can use any valid member access token associated with the
+        authenticated user with any valid scope permissions for member
+        authentication. If there is no valid member token for the relevant user
+        from any previous integration, we recommend using the bare minimum scope
+        permissions like `r_ads` which will be required to fetch authenticated
+        user's ad accounts.  Note: This API is application-specific; hence,
+        explicit member consent is not required. Any valid member access token
+        associated with the authenticated user can be used, and you do not need
+        to add any additional permission in the scope of your Oauth2 flow for
+        authorization.This collection aims to focus on different Media Planning
+        use cases and should be used with the **media-planning-env-versioning**
+        environment.\--All requests for the Media Planning API collection are in
+        the Restli 2.0 format--
+      openApi:
+        - $ref: openapi/linkedin-marketing-media-planning.yml
+    - aid: linkedin-sandbox
+      title: Reporting & Roi
+      description: >-
+        **You must apply for access to the LinkedIn Advertising APIs in order to
+        gain access to these APIs. See the** [**Developer
+        Platform**](https://developer.linkedin.com/product-catalog/marketing/reporting-and-roi)
+        **on how to apply.**[LinkedIn's Reporting & ROI
+        APIs](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started)
+        enable you to leverage LinkedIn marketing data to automate internal
+        reporting and gain valuable insights. Partners can integrate LinkedIn
+        data into their solutions to retrieve performance data, targeting
+        information, audience insights, and much more.This collection aims to
+        focus on different Reporting & ROI use cases and should be used with the
+        **reporting-roi-env-versioning** environment.\--All requests for the
+        Reporting & ROI API collection are in the Restli 2.0
+        format--AuthorizationOAuth 2.0
+      openApi:
+        - $ref: openapi/linkedin-marketing-reporting-roi.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Pages Data Portability API
+      description: >-
+        The LinkedIn Pages Data Portability API provides access to organization
+        data for regulatory compliance with the Digital Markets Act (DMA). This
+        API enables data portability for:- Organization profiles and settings -
+        Organization ACLs and authorization - Page content analytics - Feed
+        posts, reactions, and comments - Lead generation data - Talent
+        attraction data - Events and live video - Creator analyticsFor
+        comprehensive documentation, visit the [DMA
+        Documentation](https://learn.microsoft.com/en-us/linkedin/dma/).
+      openApi:
+        - $ref: openapi/linkedin-regulations-data-portability.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Ads Transparency API
+      description: >-
+        The LinkedIn Ads Transparency API provides access to advertiser
+        transparency data, enabling regulatory compliance and transparency
+        reporting for sponsored accounts.
+      openApi:
+        - $ref: openapi/linkedin-regulatory-ads-transparency.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Sales Navigator API
+      description: >-
+        API for accessing LinkedIn Sales Navigator features including sales
+        contracts, analytics export jobs, access tokens, profile associations,
+        and CRM data validation.
+      openApi:
+        - $ref: openapi/linkedin-sales-navigator.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Job Posting API
+      description: >-
+        LinkedIn's Job Posting API enables authorized third parties such as
+        clients, ATS systems, and Job Distributors to post jobs directly to
+        LinkedIn on behalf of customers.This API supports two job categories:-
+        **Basic Jobs**: Free job posts gathered by LinkedIn from external
+        sources - **Promoted Jobs**: Paid job postings with enhanced
+        visibilityThe use of these APIs is restricted to developers approved by
+        LinkedIn. Please reach out to your LinkedIn Relationship Manager or
+        Business Development contact for access.For more information, refer to
+        the [Job Posting
+        Overview](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview).
+      openApi:
+        - $ref: openapi/linkedin-talent-job-posting.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Parent Application Management API
+      description: >-
+        LinkedIn's Provisioning APIs allow partners to create and configure
+        developer applications on behalf of their customers. This is an initial
+        step to manage and enable customer integrations.For more information,
+        refer to the [Provisioning API
+        documentation](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api).
+      openApi:
+        - $ref: openapi/linkedin-talent-learning-parent-application.yml
+    - aid: linkedin-sandbox
+      title: Linkedin Recruiter System Connect API
+      description: >-
+        The LinkedIn Recruiter System Connect (RSC) API enables partners to
+        integrate their Applicant Tracking Systems (ATS) with LinkedIn
+        Recruiter. This API supports:- Configuring customer middleware
+        integrations - Syncing data from ATS to LinkedIn (jobs, candidates,
+        applications) - Retrieving data from LinkedIn (exported candidates,
+        InMail history) - Defining permissions via Access Control Lists (ACLs) -
+        Managing synced data lifecycleFor comprehensive documentation, visit the
+        [RSC
+        Documentation](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/).
+      openApi:
+        - $ref: openapi/linkedin-talent-recruiter-system-connect.yml
+virtualization:
+  sandboxes:
+    - name: Linkedin Compliance Events API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-compliance-events-api/1.0.0
+    - name: Linkedin Compliance Events MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-compliance-events-api/1.0.0/sse
+    - name: Linkedin Learning Activity Reports API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-learning-activity-reports-api/1.0.0
+    - name: Linkedin Learning Activity Reports MCP Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-learning-activity-reports-api/1.0.0/sse
+    - name: Linkedin Marketing Audience Insights API REST Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-marketing-audience-insights-api/1.0.0
+    - name: Linkedin Marketing Audience Insights MCP Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-marketing-audience-insights-api/1.0.0/sse
+    - name: Linkedin Marketing Audiences API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-marketing-audiences-api/1.0.0
+    - name: Linkedin Marketing Audiences MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-marketing-audiences-api/1.0.0/sse
+    - name: Linkedin Marketing Campaign Management API REST Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-marketing-campaign-management-api/1.0.0
+    - name: Linkedin Marketing Campaign Management MCP Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-marketing-campaign-management-api/1.0.0/sse
+    - name: Community Management REST Sandbox
+      type: http://localhost:8080/rest/community-management/1.0.0
+    - name: Community Management MCP Sandbox
+      type: http://localhost:8080/rest/community-management/1.0.0/sse
+    - name: Content APIs REST Sandbox
+      type: http://localhost:8080/rest/content-apis/1.0.0
+    - name: Content APIs MCP Sandbox
+      type: http://localhost:8080/rest/content-apis/1.0.0/sse
+    - name: Conversions API REST Sandbox
+      type: http://localhost:8080/rest/conversions-api/1.0.0
+    - name: Conversions MCP Sandbox
+      type: http://localhost:8080/rest/conversions-api/1.0.0/sse
+    - name: Lead Sync REST Sandbox
+      type: http://localhost:8080/rest/lead-sync/1.0.0
+    - name: Lead Sync MCP Sandbox
+      type: http://localhost:8080/rest/lead-sync/1.0.0/sse
+    - name: Media Planning REST Sandbox
+      type: http://localhost:8080/rest/media-planning/1.0.0
+    - name: Media Planning MCP Sandbox
+      type: http://localhost:8080/rest/media-planning/1.0.0/sse
+    - name: Reporting & Roi REST Sandbox
+      type: http://localhost:8080/rest/reporting-roi/1.0.0
+    - name: Reporting & Roi MCP Sandbox
+      type: http://localhost:8080/rest/reporting-roi/1.0.0/sse
+    - name: Linkedin Pages Data Portability API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-pages-data-portability-api/1.0.0
+    - name: Linkedin Pages Data Portability MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-pages-data-portability-api/1.0.0/sse
+    - name: Linkedin Ads Transparency API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-ads-transparency-api/1.0.0
+    - name: Linkedin Ads Transparency MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-ads-transparency-api/1.0.0/sse
+    - name: Linkedin Sales Navigator API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-sales-navigator-api/1.0.0
+    - name: Linkedin Sales Navigator MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-sales-navigator-api/1.0.0/sse
+    - name: Linkedin Job Posting API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-job-posting-api/1.0.0
+    - name: Linkedin Job Posting MCP Sandbox
+      type: http://localhost:8080/rest/linkedin-job-posting-api/1.0.0/sse
+    - name: Linkedin Parent Application Management API REST Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-parent-application-management-api/1.0.0
+    - name: Linkedin Parent Application Management MCP Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-parent-application-management-api/1.0.0/sse
+    - name: Linkedin Recruiter System Connect API REST Sandbox
+      type: http://localhost:8080/rest/linkedin-recruiter-system-connect-api/1.0.0
+    - name: Linkedin Recruiter System Connect MCP Sandbox
+      type: >-
+        http://localhost:8080/rest/linkedin-recruiter-system-connect-api/1.0.0/sse
+distribution:
+  backstage:
+    - title: Linkedin Compliance Events API
+      description: >-
+        LinkedIn provides Compliance API Guides for monitoring, archiving, and
+        management of communications for enterprises in regulated industries.
+        The Compliance Events API allows applications to archive all LinkedIn
+        activities from the past 30 days of a regulated, authenticated member.
+      entity: backstage/linkedin-compliance-events.yml
+    - title: Linkedin Learning Activity Reports API
+      description: >-
+        The LinkedIn Learning APIs enable access to Learning Content and
+        Learning Activity Reports. This API provides learning activity reports
+        including course completions, seconds of content viewed, and learner
+        logins. Activity data can be aggregated by account, group, individual,
+        or content.Access to LinkedIn Learning APIs is available to members of
+        the Partner Program and organizations that have purchased LinkedIn
+        Learning site licenses.
+      entity: backstage/linkedin-learning-activity-reports.yml
+    - title: Linkedin Marketing Audience Insights API
+      description: >-
+        Audience Insights API enables you to discover and identify audience
+        segments that meet your target persona, demonstrate interest and
+        engagement in relevant products/offerings, uncover insights about
+        companies the target audience works for, and activate audience for
+        targeting in sponsored ad campaigns on LinkedIn.Note: This is a private
+        API available to qualified developers who meet additional criteria for
+        access.
+      entity: backstage/linkedin-marketing-audience-insights.yml
+    - title: Linkedin Marketing Audiences API
+      description: >-
+        LinkedIn Audiences API enables combining LinkedIn's data with your own
+        data to reach the right audiences on LinkedIn. This includes streaming
+        companies for account targeting, streaming users for contact targeting,
+        and CSV list uploads for both account and contact targeting.
+      entity: backstage/linkedin-marketing-audience.yml
+    - title: Linkedin Marketing Campaign Management API
+      description: >-
+        Campaign Manager is LinkedIn's online tool for creating and managing ad
+        accounts and campaigns. This API provides capabilities for account
+        management, campaign group management, campaign management, creative
+        management, ad targeting, and forecasting.You must apply for access to
+        the Marketing Developer Platform to use these APIs.
+      entity: backstage/linkedin-marketing-campaigns.yml
+    - title: Community Management
+      description: >-
+        **You must apply for access to the Marketing Developer Platform in order
+        to use these APIs. See the** [**Developer
+        Portal**](https://developer.linkedin.com/product-catalog/marketing/page-management)
+        **on how to apply.**This collection aims to focus on different Community
+        Management use cases, for example, social action notifications, and
+        should be used with the **community-management-env-versioning**
+        environment.\--All requests for the Community Management API collection
+        are in the Restli 2.0 format--AuthorizationOAuth 2.0
+      entity: backstage/linkedin-marketing-community.yml
+    - title: Content APIs
+      description: >-
+        Please note that these are versioned set of APIs and they are different
+        than the earlier one.These must be used with the
+        **content-api-env-versioning** environment.Content APIs are the APIs
+        that are published with the versioned release. These APIs bring
+        capabilities to partners/developers to create rich content via LinkedIn
+        Ads with minimal operational and technical overhead.**You must apply for
+        access to the Marketing Developer Platform in order to use these APIs.
+        See the** [**Developer
+        Portal**](https://developer.linkedin.com/product-catalog/marketing/campaign-management)
+        **on how to apply.**
+      entity: backstage/linkedin-marketing-content.yml
+    - title: Conversions API
+      description: >-
+        **See the** [Getting
+        Access](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/conversions/getting-access-conversions)
+        guide **on how to apply.**[LinkedIn's Conversion
+        API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api)
+        is a conversion tracking tool that creates a direct connection between
+        marketing data from an advertiser’s server and LinkedIn. This API
+        enables advertisers to measure the performance of their LinkedIn
+        marketing campaigns no matter where the conversion happens and use this
+        data to power campaign optimization.This collection aims to focus on the
+        new Conversions API and should be used with the
+        **conversions-env-versioning** environment.There are two conditions for
+        successful calls: (1) Scope permissions to `rw_conversions`, `r_ads` and
+        (2) the user assigning permission holding one of the following roles in
+        the Ad Account.Scope permissions for [3-legged
+        Oauth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)-
+        `rw_conversions` (Read/Write)- `r_ads` (Read)    Ad Account Roles:-
+        `ACCOUNT_BILLING_ADMIN`- `ACCOUNT_MANAGER`- `CAMPAIGN_MANAGER`-
+        `CREATIVE_MANAGER`    \--All requests for the Conversions collection are
+        in the Restli 2.0 format--
+      entity: backstage/linkedin-marketing-conversions.yml
+    - title: Lead Sync
+      description: >-
+        This collection aims to focus on different lead syncing use cases and
+        should be used with the **lead-sync-env-versioning** environment._All
+        requests for the Lead Sync collection are in the Restli 2.0 format and
+        uses OAuth 2.0_
+      entity: backstage/linkedin-marketing-leads.yml
+    - title: Media Planning
+      description: >-
+        ## OverviewMedia Planning API can help Media Planners understand the
+        reach and ROI that LinkedIn can offer to their client. It allows them to
+        make budget allocation recommendations with confidence and know how to
+        improve the results, even before spending the first dollar. Media
+        Planning API helps Media Planners make that decision by giving the
+        forecasted reach, impressions (and more in future, like clicks, leads)
+        curve over the budget, based on inputs provided like targeted audience,
+        campaign start/end date and more.Note: This is a private API that is
+        available to qualified developers who meet additional criteria for
+        access. To learn more about eligibility qualifications and how to
+        request access, please see the
+        [FAQ](https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq#how-do-i-get-access-to-media-planning-api-product).
+        If you wish to apply for access, please submit a [Zendesk support
+        ticket](https://linkedin.zendesk.com/).## PermissionsMedia Planning API
+        requires a [3-legged
+        OAuth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)
+        member token and your developer application needs to be provisioned with
+        the Media Planning API product. Once you have been approved to access,
+        you can use any valid member access token associated with the
+        authenticated user with any valid scope permissions for member
+        authentication. If there is no valid member token for the relevant user
+        from any previous integration, we recommend using the bare minimum scope
+        permissions like `r_ads` which will be required to fetch authenticated
+        user's ad accounts.  Note: This API is application-specific; hence,
+        explicit member consent is not required. Any valid member access token
+        associated with the authenticated user can be used, and you do not need
+        to add any additional permission in the scope of your Oauth2 flow for
+        authorization.This collection aims to focus on different Media Planning
+        use cases and should be used with the **media-planning-env-versioning**
+        environment.\--All requests for the Media Planning API collection are in
+        the Restli 2.0 format--
+      entity: backstage/linkedin-marketing-media-planning.yml
+    - title: Reporting & Roi
+      description: >-
+        **You must apply for access to the LinkedIn Advertising APIs in order to
+        gain access to these APIs. See the** [**Developer
+        Platform**](https://developer.linkedin.com/product-catalog/marketing/reporting-and-roi)
+        **on how to apply.**[LinkedIn's Reporting & ROI
+        APIs](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started)
+        enable you to leverage LinkedIn marketing data to automate internal
+        reporting and gain valuable insights. Partners can integrate LinkedIn
+        data into their solutions to retrieve performance data, targeting
+        information, audience insights, and much more.This collection aims to
+        focus on different Reporting & ROI use cases and should be used with the
+        **reporting-roi-env-versioning** environment.\--All requests for the
+        Reporting & ROI API collection are in the Restli 2.0
+        format--AuthorizationOAuth 2.0
+      entity: backstage/linkedin-marketing-reporting-roi.yml
+    - title: Linkedin Pages Data Portability API
+      description: >-
+        The LinkedIn Pages Data Portability API provides access to organization
+        data for regulatory compliance with the Digital Markets Act (DMA). This
+        API enables data portability for:- Organization profiles and settings -
+        Organization ACLs and authorization - Page content analytics - Feed
+        posts, reactions, and comments - Lead generation data - Talent
+        attraction data - Events and live video - Creator analyticsFor
+        comprehensive documentation, visit the [DMA
+        Documentation](https://learn.microsoft.com/en-us/linkedin/dma/).
+      entity: backstage/linkedin-regulations-data-portability.yml
+    - title: Linkedin Ads Transparency API
+      description: >-
+        The LinkedIn Ads Transparency API provides access to advertiser
+        transparency data, enabling regulatory compliance and transparency
+        reporting for sponsored accounts.
+      entity: backstage/linkedin-regulatory-ads-transparency.yml
+    - title: Linkedin Sales Navigator API
+      description: >-
+        API for accessing LinkedIn Sales Navigator features including sales
+        contracts, analytics export jobs, access tokens, profile associations,
+        and CRM data validation.
+      entity: backstage/linkedin-sales-navigator.yml
+    - title: Linkedin Job Posting API
+      description: >-
+        LinkedIn's Job Posting API enables authorized third parties such as
+        clients, ATS systems, and Job Distributors to post jobs directly to
+        LinkedIn on behalf of customers.This API supports two job categories:-
+        **Basic Jobs**: Free job posts gathered by LinkedIn from external
+        sources - **Promoted Jobs**: Paid job postings with enhanced
+        visibilityThe use of these APIs is restricted to developers approved by
+        LinkedIn. Please reach out to your LinkedIn Relationship Manager or
+        Business Development contact for access.For more information, refer to
+        the [Job Posting
+        Overview](https://docs.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview).
+      entity: backstage/linkedin-talent-job-posting.yml
+    - title: Linkedin Parent Application Management API
+      description: >-
+        LinkedIn's Provisioning APIs allow partners to create and configure
+        developer applications on behalf of their customers. This is an initial
+        step to manage and enable customer integrations.For more information,
+        refer to the [Provisioning API
+        documentation](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api).
+      entity: backstage/linkedin-talent-learning-parent-application.yml
+    - title: Linkedin Recruiter System Connect API
+      description: >-
+        The LinkedIn Recruiter System Connect (RSC) API enables partners to
+        integrate their Applicant Tracking Systems (ATS) with LinkedIn
+        Recruiter. This API supports:- Configuring customer middleware
+        integrations - Syncing data from ATS to LinkedIn (jobs, candidates,
+        applications) - Retrieving data from LinkedIn (exported candidates,
+        InMail history) - Defining permissions via Access Control Lists (ACLs) -
+        Managing synced data lifecycleFor comprehensive documentation, visit the
+        [RSC
+        Documentation](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/).
+      entity: backstage/linkedin-talent-recruiter-system-connect.yml
+metrics:
+  numberOfPaths: 113
+  numberOfOperations: 148
+  numberOfReadOperations: 86
+  numberOfWriteOperations: 62
+  numberOfSchemas: 206
+  numberOfResponses: 0
+  numberOfParameters: 32
+  numberOfExamples: 72
+  numberOfRequestBodies: 0
+  numberOfHeaders: 0
+  tags:
+    - Access Control
+    - Account Management
+    - Ad Accounts
+    - Ad Targeting Entities
+    - Advertiser Transparency
+    - Application Retrieval
+    - Application Synchronization
+    - Application Updates
+    - Apply Connect Jobs
+    - Audience Counts
+    - Audience Insights
+    - Authentication
+    - Business Manager
+    - Campaign Group Management
+    - Campaign Management
+    - Candidate Synchronization
+    - Child Application Provisioning
+    - Company Streaming
+    - Compliance Authorization
+    - Compliance Events
+    - Conversion Events Streaming Workflow
+    - Creative Management
+    - Crm Data Validation
+    - Customer Integrations
+    - Data Deletion
+    - Data Retrieval
+    - Dmp Segments
+    - Events
+    - Feed Content
+    - Fetch Media Plan
+    - Integration Configuration
+    - Job Lifecycle Management
+    - Lead Generation
+    - Learning Activity Reports
+    - List Uploads
+    - Organization Access Control
+    - Organizations
+    - Page Analytics
+    - Profile Associations
+    - Sales Access Tokens
+    - Sales Analytics Export
+    - Sales Contracts
+    - Use Cases > B2b Templates > Conversions Deep Dive
+    - Use Cases > Conversation Ad > Sponsored Conversations
+    - Use Cases > Conversation Ad > Sponsored Message Contents
+    - Use Cases > Creatives
+    - Use Cases > Document Ad
+    - Use Cases > Image Ad
+    - Use Cases > Inmail Content
+    - Use Cases > Organization Access Controls
+    - Use Cases > Organization Followers
+    - Use Cases > Organization Lookup > Organization Brands
+    - Use Cases > Organization Lookup > Organizations
+    - Use Cases > Posts
+    - >-
+      Use Cases > Social Actions Notifications > Organization Social Actions
+      Notifications - Pull Workflow
+    - >-
+      Use Cases > Social Actions Notifications > Organization Social Actions
+      Notifications - Push Workflow
+    - Use Cases > Sponsored
+    - Use Cases > Spotlight Ad
+    - Use Cases > Statistics Apis > Organization Follower Statistics
+    - Use Cases > Statistics Apis > Organization Page Statistics
+    - Use Cases > Statistics Apis > Organization Share Statistics
+    - Use Cases > Video Ad
+    - User Access
+    - User Streaming
+  operations:
+    - 10. Stream multiple conversion events to the conversion rule
+    - 2. Create a share with a Company Mention
+    - 2. Get the user's sponsored accounts (ad accounts)
+    - 2. Retrieve authenticated user's Sponsored Ad Accounts
+    - 3. Create a subscription request
+    - 3. Retrieve Notifications for the authenticated member's organization
+    - 4. Fetch existing Conversion Rules for CAPI in the selected ad account
+    - 4. Validate the user's organization role
+    - 5. Get forms for the chosen Sponsored Account
+    - 5. Retrieve Subscription by Key
+    - 6. Create a new Conversion Rule
+    - 6. Remove a Subscription
+    - 7. Fetch active campaigns
+    - 8. Associate campaigns to conversion rule
+    - 8. Schedule periodic form response (lead) pulls
+    - 8. Subscribe for lead notification webhooks
+    - 9. Fetch full lead data after a lead notification is received
+    - Archive Campaign
+    - Attach Uploaded List To DMP Segment
+    - Batch Fetch Profile Associations
+    - Batch GET on Administered Organization Brands
+    - Batch GET on Non-Administered Organization Brands
+    - Batch Get InMail Content
+    - Batch Get Organizations
+    - Batch create Sponsored Message Content
+    - Batch delete Sponsored Message Content
+    - Batch get Sponsored Message Content
+    - Batch update Sponsored Message Content
+    - Check Job Posting Task Status
+    - Check Member Regulation Status
+    - Conversions by Member Company Size
+    - Create Ad Account User
+    - Create CRM Data Validation Export Job
+    - Create Creative
+    - Create DMP Segment
+    - Create InMail Content
+    - Create New Sales Analytics Export Job
+    - Create Or Update Apply Connect Job Posting
+    - Create Resume Upload URL
+    - Create Test Ad Account
+    - Create a Dynamic Spotlight Ad
+    - Create a Sponsored Conversation
+    - Create document content
+    - Delete Ad Account User
+    - Delete Campaign Group
+    - Delete Entity ACL
+    - Delete Multiple Campaign Groups
+    - Delete Synced Applications
+    - Delete Synced Candidates
+    - Delete a Creative
+    - Delete a Dynamic Spotlight Ad
+    - Delete a Post
+    - Fetch Ad Account By Id
+    - Fetch Ad Account User
+    - Fetch Audience Insights By Targeting Criteria
+    - Fetch Authenticated User Ad Accounts
+    - Fetch Authenticated User Organization Roles
+    - Fetch Campaign By Id
+    - Fetch Campaign Group By Id
+    - Fetch Profile Association By Key
+    - Fetch Sales Analytics Export Job By Id
+    - Fetch multiple Image Content
+    - Fetch multiple document content
+    - Find Administered Organization Brands by Parent Org
+    - Find All Contracts Where User Has Active Seat
+    - Find Non-Administered Organization
+    - Find Organization Access Control
+    - Forecast Avg Lifetime Frequency
+    - Get Ad Targeting Entities Using Typeahead Search
+    - Get Advertiser Transparency Data
+    - Get Audience Count By Targeting Criteria
+    - Get Bing Geo locations using search typeahead
+    - Get Business Manager Account Relationships
+    - Get CRM Data Validation Export Job Status
+    - Get Child Application
+    - Get Comments
+    - Get Customer ATS Integration Details
+    - Get Customer Application Access Token
+    - Get Events
+    - Get Exported Candidate Profile
+    - Get Image Content
+    - Get InMail Content
+    - Get Integration Status Change Notification
+    - Get Lead Generation Responses
+    - Get Learning Activity Reports
+    - Get List Of Available Ad Targeting Facets
+    - Get Multiple Sponsored Conversations
+    - Get Multiple Videos
+    - Get Organization
+    - Get Organization ACLs
+    - Get Page Content Analytics
+    - Get Posts
+    - Get Posts by URN
+    - Get Reactions
+    - Get Sponsored Message Content
+    - Get a  Sponsored Creative
+    - Get a Dynamic Spotlight Ad
+    - Get a Sponsored Conversation
+    - Get a list of available Ad Targeting Facets
+    - Get a single Image
+    - Get a single document
+    - Get a single video
+    - Get multiple documents
+    - Initialize Document Upload
+    - Initialize Image Upload
+    - Initialize Video Upload
+    - Lifetime Page Statistics
+    - Lookup by Organization Primary Type
+    - Monitor DMP Segment Status
+    - Opt In Member For Compliance Monitoring
+    - Opt Out Member From Compliance Monitoring
+    - Provision Child Application
+    - Retrieve Candidate Matches
+    - Retrieve Compliance Events For Regulated Member
+    - Retrieve Entity ACL
+    - Retrieve Organization Follower Count
+    - Retrieve Recruiter Seatholders
+    - Retrieve Sales Access Token For Authenticated Iframe Sessions
+    - Retrieve User Ad Accounts
+    - Retrieve an Administered Organization Brand
+    - Search Ad Accounts By Type
+    - Search By Keyword
+    - Search By Vanity URL
+    - Search Campaign Groups
+    - Search Campaigns
+    - Search for Creative
+    - Send Test InMail
+    - Stream Company Data To Segment
+    - Stream User Data To Segment
+    - Sync Candidates To LinkedIn
+    - Sync Job Applications
+    - Time Bound Share Statistics
+    - Time-Bound follower statistics
+    - Update Ad Account Name
+    - Update Ad Account User
+    - Update Campaign Group
+    - Update Customer ATS Integration
+    - Update Customer ATS Integrations
+    - Update InMail Content
+    - Update OAuth 2.0 Callback URLs For Child Application
+    - Update Sponsored Message Content
+    - Update a Creative
+    - Update a Dynamic Spotlight Ad
+    - Update a Post
+    - Update a Sponsored Conversation
+    - >-
+      Upload the Document file (select a document file in the Body for postman
+      to use)
+    - Upsert Entity ACL
+    - '[PUSH] Delete a registered webhook by id'
+useCase:
+  - $ref: >-
+      https://github.com/naftiko/schema/blob/main/secondary/use-case/examples/use-case-example-api-sandbox.yml
+stakeholders:
+  - FN: Kin Lane
+    ROLE: Chief Community Officer (CCO)
+    EMAIL: kinlane@naftiko.io
+    SOCIALPROFILE: https://www.linkedin.com/in/kinlane/
+change:
+  state: New
+  schemaVersion: 0.1.0
+  capabilityVersion: 0.1.0
+  updated: '2026-1-31T00:00:00Z'
+  created: '2026-1-31T00:00:00Z'
+source:
+  httpUrl: https://github.com/naftiko/linkedin-sandbox
+  sshUrl: git@github.com:naftiko/linkedin-sandbox.git
+support:
+  issues: https://github.com/naftiko/linkedin-sandbox/issues
+  discussions: https://github.com/orgs/naftiko/discussions
+standards:
+  - name: Naftiko Capabilities
+    description: This uses a exploratory schema to help inform and shape capabilities.
+    docUrl: https://naftiko.github.io/technology/docs/capabilities/
+  - name: OpenAPI
+    description: This uses OpenAPI to define access to all HTTP APIs.
+    docUrl: https://naftiko.github.io/technology/docs/standards/openapi/
+  - name: JSON Schema
+    description: This uses JSON Schema to define and validate all entities used.
+    docUrl: 'https://naftiko.github.io/technology/docs/standards/json-schema/ '
+  - name: Model Context Protocol
+    description: This uses MCP expresed as JSON schema to define each MCP server.
+    docUrl: >-
+      https://naftiko.github.io/technology/docs/standards/model-context-protocol/
+  - name: Bruno Collections
+    description: >-
+      This uses Bruno Collections to define each executable HTTP API
+      integration.
+    docUrl: https://naftiko.github.io/technology/docs/standards/bruno-collections/
+  - name: Bruno Environments
+    description: >-
+      This uses Bruno Environments to store keys for each API to use in
+      automation.
+    docUrl: https://naftiko.github.io/technology/docs/standards/bruno-environments/
+  - name: API Commons
+    description: This uses an API Commons schema to define the plans and rate limits.
+    docUrl: https://naftiko.github.io/technology/docs/standards/api-commons/
+services:
+  - aid: linkedin
+    name: LinkedIn API & MCP Sandbox
+    description: >-
+      This is a LinkedIn sandbox that uses OpenAPI, Microcks, Bruno, and
+      Backstage to provide a 3rd-party REST API and MCP sandbox for LinkedIn.
+    docUrl: https://naftiko.github.io/technology/docs/services/linkedin/
+    apisJson: >-
+      https://raw.githubusercontent.com/api-evangelist/linkedin/refs/heads/main/apis.yml
+observability:
+  visibility: Public
