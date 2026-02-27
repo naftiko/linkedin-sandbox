@@ -15,7 +15,7 @@ tags:
   - Recruiting
   - Marketing
 
-image: https://naftiko.s3.us-east-1.amazonaws.com/naftiko-logo-blue-icon.png
+image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
 
 created: '2026-02-13'
 modified: '2026-02-13'
@@ -31,6 +31,9 @@ apis:
         management of communications for enterprises in regulated industries.
         The Compliance Events API allows applications to archive all LinkedIn
         activities from the past 30 days of a regulated, authenticated member.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Compliance
         - Archiving
@@ -53,6 +56,9 @@ apis:
         including course completions, seconds of content viewed, and learner
         logins. Activity data can be aggregated by account, group, individual,
         or content.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Learning
         - Reports
@@ -75,6 +81,9 @@ apis:
         engagement in relevant products, uncover insights about companies the
         target audience works for, and activate audiences for targeting in
         sponsored ad campaigns on LinkedIn.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Audience Insights
@@ -96,6 +105,9 @@ apis:
         own data to reach the right audiences on LinkedIn. This includes
         streaming companies for account targeting, streaming users for contact
         targeting, and CSV list uploads for both account and contact targeting.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Audience Targeting
@@ -117,6 +129,9 @@ apis:
         accounts and campaigns. This API provides capabilities for account
         management, campaign group management, campaign management, creative
         management, ad targeting, and forecasting.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Campaigns
@@ -138,6 +153,9 @@ apis:
         The Community Management API focuses on community management use cases
         such as social action notifications. Manage posts, reactions, comments,
         and community engagement on LinkedIn Pages and profiles.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Community
         - Pages
@@ -159,6 +177,9 @@ apis:
         via LinkedIn Ads with minimal operational and technical overhead.
         Manage ad creatives, images, videos, and other media assets for
         LinkedIn advertising campaigns.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Content
@@ -182,6 +203,9 @@ apis:
         and LinkedIn. This API enables advertisers to measure the performance
         of their LinkedIn marketing campaigns no matter where the conversion
         happens and use this data to power campaign optimization.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Conversions
@@ -204,6 +228,9 @@ apis:
         between LinkedIn and external CRM or marketing systems. Retrieve and
         manage leads captured from LinkedIn Lead Gen Forms on sponsored
         content campaigns.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Leads
@@ -226,6 +253,9 @@ apis:
         with confidence and insight into how to improve results before spending.
         This is a private API available to qualified developers who meet
         additional criteria for access.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Media Planning
@@ -248,6 +278,9 @@ apis:
         marketing data to automate internal reporting and gain valuable
         insights. Retrieve performance data, targeting information, audience
         insights, and campaign analytics.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Marketing
         - Reporting
@@ -272,6 +305,9 @@ apis:
         ACLs and authorization, page content analytics, feed posts, reactions,
         comments, lead generation data, talent attraction data, events and live
         video, and creator analytics.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Regulations
         - Data Portability
@@ -292,6 +328,9 @@ apis:
         The LinkedIn Ads Transparency API provides access to advertiser
         transparency data, enabling regulatory compliance and transparency
         reporting for sponsored accounts.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Regulations
         - Ads Transparency
@@ -312,6 +351,9 @@ apis:
         API for accessing LinkedIn Sales Navigator features including sales
         contracts, analytics export jobs, access tokens, profile associations,
         and CRM data validation.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Sales
         - Sales Navigator
@@ -333,6 +375,9 @@ apis:
         clients, ATS systems, and Job Distributors to post jobs directly to
         LinkedIn on behalf of customers. This API supports Basic Jobs and
         Promoted Jobs.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Talent
         - Job Posting
@@ -353,6 +398,9 @@ apis:
         LinkedIn's Provisioning APIs allow partners to create and configure
         developer applications on behalf of their customers. This is an
         initial step to manage and enable customer integrations.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Talent
         - Provisioning
@@ -376,6 +424,9 @@ apis:
         integrations, syncing data from ATS to LinkedIn, retrieving data from
         LinkedIn, defining permissions via Access Control Lists (ACLs), and
         managing synced data lifecycle.
+      humanURL: https://github.com/naftiko/linkedin-sandbox
+      baseURL: http://localhost:8080/rest/linkedin-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
       tags:
         - Talent
         - Recruiting
@@ -394,6 +445,7 @@ apis:
 common:
 
   - type: Summary
+    url: https://github.com/naftiko/linkedin-sandbox
     data:
 
       numberOfApis: 17
@@ -522,6 +574,7 @@ common:
     url: https://github.com/orgs/naftiko/discussions
 
   - type: Standards
+    url: https://github.com/naftiko/linkedin-sandbox
     data:
 
       - name: APIs.json
@@ -553,6 +606,7 @@ common:
         docUrl: https://apicommons.org/
 
   - type: Services
+    url: https://github.com/naftiko/linkedin-sandbox
     data:
 
       - aid: linkedin
