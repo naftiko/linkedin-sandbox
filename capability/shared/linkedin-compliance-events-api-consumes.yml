@@ -1,0 +1,33 @@
+naftiko: "1.0.0-alpha2"
+consumes:
+  - namespace: linkedin-compliance-events-api
+    type: http
+    baseUri: "https://mocks.naftiko.net/rest/linkedin-compliance-events-api/1.0.0"
+    resources:
+      - name: check-member-regulation-status
+        path: "/v2/memberComplianceAuthorizations"
+        operations:
+          - name: check-member-regulation-status
+            method: GET
+            inputParameters:
+              - name: q
+                in: query
+                required: true
+      - name: get-compliance-events
+        path: "/v2/complianceEvents"
+        operations:
+          - name: get-compliance-events
+            method: GET
+            inputParameters:
+              - name: q
+                in: query
+                required: true
+              - name: projection
+                in: query
+                required: false
+              - name: startTime
+                in: query
+                required: false
+              - name: count
+                in: query
+                required: false

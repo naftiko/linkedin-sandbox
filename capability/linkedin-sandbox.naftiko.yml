@@ -1,0 +1,104 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "Linkedin Sandbox"
+  description: "Naftiko Sandbox — wraps the Linkedin API mocks hosted at mocks.naftiko.net. Exposes MCP, REST, and Skill adapters for AI agents and downstream tools."
+  tags:
+    - "Linkedin"
+    - "Naftiko Sandbox"
+    - MCP
+    - Mocks
+
+binds:
+  - namespace: "sandbox-env"
+    description: "Sandbox bearer token for the Naftiko Framework MCP server."
+    location: "file:///./shared/secrets.yaml"
+    keys:
+      MCP_SERVER_TOKEN: "mcp-server-token"
+
+capability:
+  consumes:
+    - import: linkedin-compliance-events-api
+      location: ./shared/linkedin-compliance-events-api-consumes.yml
+
+  exposes:
+    - type: mcp
+      address: "0.0.0.0"
+      port: 3001
+      namespace: linkedin-sandbox-tools
+      authentication:
+        type: bearer
+        token: "{{MCP_SERVER_TOKEN}}"
+      description: "Linkedin MCP tools — backed by mocks.naftiko.net"
+      tools:
+        - name: check-member-regulation-status
+          description: "Check Member Regulation Status"
+          call: linkedin-compliance-events-api.check-member-regulation-status
+          inputParameters:
+            - name: q
+              in: query
+              required: true
+        - name: get-compliance-events
+          description: "Retrieve Compliance Events For Regulated Member"
+          call: linkedin-compliance-events-api.get-compliance-events
+          inputParameters:
+            - name: q
+              in: query
+              required: true
+            - name: projection
+              in: query
+              required: false
+            - name: startTime
+              in: query
+              required: false
+            - name: count
+              in: query
+              required: false
+
+    - type: rest
+      address: "0.0.0.0"
+      port: 3002
+      namespace: linkedin-sandbox-api
+      description: "Linkedin REST adapter — exposes the same domain as REST resources."
+      resources:
+        - name: check-member-regulation-status
+          path: "/check-member-regulation-status"
+          operations:
+            - method: GET
+              call: linkedin-compliance-events-api.check-member-regulation-status
+              inputParameters:
+                - name: q
+                  in: query
+                  required: true
+        - name: get-compliance-events
+          path: "/get-compliance-events"
+          operations:
+            - method: GET
+              call: linkedin-compliance-events-api.get-compliance-events
+              inputParameters:
+                - name: q
+                  in: query
+                  required: true
+                - name: projection
+                  in: query
+                  required: false
+                - name: startTime
+                  in: query
+                  required: false
+                - name: count
+                  in: query
+                  required: false
+
+    - type: skill
+      address: "0.0.0.0"
+      port: 3003
+      namespace: linkedin-sandbox-skills
+      description: "Linkedin skill server for structured agent discovery."
+      groups:
+        - name: read-linkedin
+          description: "Read-only Linkedin operations."
+          skills:
+            - name: check-member-regulation-status
+              call: linkedin-compliance-events-api.check-member-regulation-status
+            - name: get-compliance-events
+              call: linkedin-compliance-events-api.get-compliance-events
